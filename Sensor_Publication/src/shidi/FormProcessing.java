@@ -99,7 +99,7 @@ public class FormProcessing extends HttpServlet {
             out.println("Click  <a href=\"XMLTORDF\">here</a> to start Step 2 (Convert the XML format to RDF)<br>");
             out.println("<br>");
             out.println("<br>");
-            out.println("Click <a href=\"/Data/devicelist.xml\">here</a> to see the XML file");
+            out.println("Click <a href=\"/Sensor_Publication/Data/devicelist.xml\">here</a> to see the XML file");
             out.println("Click <a href=\"index.jsp\">here</a> to go to home page");
             out.println("and quary page. <br>");
         
@@ -138,6 +138,7 @@ public class FormProcessing extends HttpServlet {
     
     protected void SaveXMLDocument(Document doc, String fileName) {
         Transformer transformer;
+        System.out.println(doc);
         try {
             transformer = TransformerFactory.newInstance().newTransformer();
             Result xmlFile = new StreamResult(new File(fileName));
