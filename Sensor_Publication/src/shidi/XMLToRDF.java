@@ -48,8 +48,8 @@ public class XMLToRDF extends HttpServlet {
         ServletContext context = getServletConfig().getServletContext();
         String contextPath = context.getRealPath("");
         
-        String fileName= contextPath+"/Data/RDFTemplate.xsl";
-        String rdfFile= "/Data/RDFTemplate.xsl"; 
+        String fileName= contextPath + "/Data/devicelist.xml";
+        String rdfFile=contextPath + "/Data/devicelist.rdf"; 
         
         
         
@@ -83,13 +83,13 @@ public class XMLToRDF extends HttpServlet {
             trans.transform(xmlDoc, result);
             
         } catch (ParserConfigurationException ex) {
-            System.out.println (ex.getMessage());
+            System.out.println ("1:"+ex.getMessage());
         }
         catch (SAXException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("2:"+ex.getMessage());
         }
         catch (TransformerException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("3:"+ex.getMessage());
         }
         
         try {
@@ -105,10 +105,10 @@ public class XMLToRDF extends HttpServlet {
             out.println("<br>");
             //out.println("The file is saved to:" + rdfFile + "<br>");
             out.println("<br>");
-            out.println("Click <a href=\"/Data/devicelist.xml\">here</a> to see the XML file");
+            out.println("Click <a href=\"/Sensor_Publication/Data/devicelist.xml\">here</a> to see the XML file");
             out.println("<br>");
             out.println("<br>");
-            out.println("Click <a href=\"/Data/devicelist.rdf\">here</a> to see the RDF file");
+            out.println("Click <a href=\"/Sensor_Publication/Data/devicelist.rdf\">here</a> to see the RDF file");
             out.println("<br>");
             out.println("<br>");
             out.println("Click <a href=\"index.jsp\">here</a> to go to home page");
