@@ -109,12 +109,12 @@ public class FormProcessing extends HttpServlet {
 
     Document CreateXMLDocument (Document doc, ArrayList node, ArrayList value) throws ParserConfigurationException {
 
-        Element root = doc.createElement("DeviceList");
+        Element root = doc.createElement("Sensorinfo");
         doc.appendChild(root);
 
         int i = 0;
 
-        Element firstLevel = doc.createElement("Device");
+        Element firstLevel = doc.createElement("Sensor");
         root.appendChild(firstLevel);
 
         while (i < node.size()){
